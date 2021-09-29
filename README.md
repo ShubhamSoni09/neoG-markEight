@@ -1,8 +1,6 @@
 # Know your Fruit!
 
-[neoG mark8]
-
-<a href="https://markeight-fruit.netlify.app/"><img src="https://github.com/himadri2110/portfolio/blob/main/img/fruit.png" /></a>
+This is the mark8 of the levelZero of the Bootcamp. You can see the live demo on:
 
 ## Features
 
