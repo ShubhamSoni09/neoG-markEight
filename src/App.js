@@ -75,7 +75,7 @@ export default function App() {
 
       <footer>
         <a
-          href="https://shubhamsoni.me/"
+          href="https://shubham-soni-portfolio.netlify.app"
           target="_blank"
           rel="noreferrer noopener"
         >
