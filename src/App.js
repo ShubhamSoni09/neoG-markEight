@@ -1,79 +1,82 @@
 import "./styles.css";
 import { useState } from "react";
 
-var fruitDictionary = {
-  "": "",
-  "🍎": "Apple",
-  "🍐": "Pear",
-  "🍉": "Watermelon",
-  "🍍": "Pineapple",
-  "🥝": "Kiwi",
-  "🥭": "Mango",
-  "🍌": "Banana",
-  "🍓": "Strawberry",
-  "🍇": "Grapes",
-  "🍏": "Green Apple",
-  "🍑": "Peach",
-  "🍒": "Cherry",
-  "🍈": "Melon"
+var DictionaryOfFruits = {
+
+    "🍎": "Apple",
+    "🍈": "Melon",
+    "🍐": "Pear",
+    "🍒": "Cherry",
+    "🍉": "Watermelon",
+    "🍑": "Peach",
+    "🍍": "Pineapple",
+    "🥝": "Kiwi",
+    "🍏": "Green Apple",
+    "🥭": "Mango",
+    "🍇": "Grapes",
+    "🍌": "Banana",
+    "🍓": "Strawberry",
+    "🍇": "Grapes",
 };
 
-var fruitKey = Object.keys(fruitDictionary);
+var KeyofFruit =  Object.keys(DictionaryOfFruits);
 
-export default function App() {
-  var [input, setInput] = useState("");
-  var showOutput;
+export default function App(){
+    var [input,setInput] = useState("");
+    var showOutput;
 
-  function inputChangeHandler(event) {
-    input = event.target.value;
-    showOutput = fruitDictionary[input];
+    function inputChangeHandler(event){
+        input = event.target.value;
+        showOutput = fruitDictionary[input];
 
-    if (!(input in fruitDictionary)) {
-      showOutput = "No such fruit found!";
+        if(!input in DictionaryOfFruits)){
+            showOutput = "There is no such fruit!";
+        }
+
+        setInput(showOutput);
     }
-    setInput(showOutput);
-  }
 
-  function fruitClickHandler(fruit) {
-    showOutput = fruitDictionary[fruit];
-    setInput(showOutput);
-  }
+    function fruitClickHandler(fruit){
+        showOutput = fruitDictionary[fruit];
+        setInput(showOutput);
+    }
 
-  return (
-    <div className="App">
-      <header>
-        <h1>Know your Fruit!</h1>
-        <p className="github">
-          <a
-            href="https://github.com/ShubhamSoni09/fruit-emoji"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            GitHub Repo
-          </a>
-        </p>
-      </header>
+    return (
+        <div className="TheApp">
+            <header>
+                <h1>Know your Fruit!</h1>
+                <p className="mainclass">
+                    <a
+                        href="https://github.com/ShubhamSoni09/fruit-emoji"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                    Github Repo
+                </a>
+                </p>
+            </header>
 
-      <main>
-        <input
-          onChange={inputChangeHandler}
-          placeholder="Enter fruit emoji to know its name"
-        ></input>
+            <main>
+                <input
+                    onChange={inputChangeHandler}
+                    placeholder="Enter the fruit emoji for which you want to know the name"
+                    ></input>
 
-        <div className="output">{input}</div>
+                    <div className="output">{input}</div>
 
-        <div> Fruits we know: </div>
+                    <div>Fruits we know: </div>
 
-        <div className="fruitDiv">
-          {fruitKey.map((fruit) => {
-            return (
-              <span onClick={() => fruitClickHandler(fruit)}>{fruit}</span>
-            );
-          })}
-        </div>
-      </main>
+                    <div className="fruitDiv">
+                        {
+                            KeyofFruit.map((fruit)=>{
+                                return (
+                                    <span onClick={() => fruitClickHandler(fruit)}>{fruit}</span>
+                                );
+                            })}
+                        </div>
+                    </main>
 
-      <footer>
+        <footer>
         <a
           href="https://shubham-soni-portfolio.netlify.app"
           target="_blank"
@@ -83,5 +86,6 @@ export default function App() {
         </a>
       </footer>
     </div>
-  );
+        
+    );
 }
