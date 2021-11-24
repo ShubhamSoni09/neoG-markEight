@@ -29,7 +29,7 @@ export default function App(){
         input = event.target.value;
         showOutput = DictionaryOfFruits[input];
 
-        if(!input in DictionaryOfFruits)){
+        if(!input in DictionaryOfFruits){
             showOutput = "There is no such fruit!";
         }
 
