@@ -47,7 +47,7 @@ export default function App(){
                 <h1>Know your Fruit!</h1>
                 <p className="mainclass">
                     <a
-                        href="https://github.com/ShubhamSoni09/fruit-emoji"
+                        href="https://github.com/ShubhamSoni09/neoG-markEight"
                         target="_blank"
                         rel="noreferrer noopener"
                     >
