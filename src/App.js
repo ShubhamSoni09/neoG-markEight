@@ -27,7 +27,7 @@ export default function App(){
 
     function inputChangeHandler(event){
         input = event.target.value;
-        showOutput = fruitDictionary[input];
+        showOutput = DictionaryOfFruits[input];
 
         if(!input in DictionaryOfFruits)){
             showOutput = "There is no such fruit!";
@@ -37,7 +37,7 @@ export default function App(){
     }
 
     function fruitClickHandler(fruit){
-        showOutput = fruitDictionary[fruit];
+        showOutput = DictionaryOfFruits[fruit];
         setInput(showOutput);
     }
 
